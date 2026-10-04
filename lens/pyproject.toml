@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lens"
+version = "0.1.0"
+description = "Hybrid retrieval and RAG evaluation: HNSW and BM25 from scratch, with an evaluation harness that runs without any API key"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Khwahish Daudani" }]
+keywords = ["rag", "retrieval", "hnsw", "bm25", "evaluation", "vector-search"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# numpy is the only hard dependency. The index, the BM25 scorer, the fusion
+# ranker and the evaluation metrics are all implemented here rather than pulled
+# in -- that is the point of the project.
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "pydantic>=2.0"]
+openai = ["openai>=1.0"]
+anthropic = ["anthropic>=0.25"]
+dev = ["pytest>=7.4", "pytest-asyncio>=0.23", "httpx>=0.27", "ruff>=0.4", "mypy>=1.9"]
+
+[project.scripts]
+lens = "lens.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+# Warnings are errors: a DeprecationWarning from our own code is a bug we want
+# to see fail. The exemption is a known upstream notice from starlette's test
+# client about its httpx dependency, which is outside this project's control.
+filterwarnings = [
+    "error",
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true

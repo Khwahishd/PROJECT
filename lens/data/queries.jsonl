@@ -1,0 +1,24 @@
+{"query_id": "q01", "query": "how do layered proximity graphs make vector lookup fast", "relevant_doc_ids": ["ann-hnsw"]}
+{"query_id": "q02", "query": "encoding questions and passages separately into one space", "relevant_doc_ids": ["dense-retrieval"]}
+{"query_id": "q03", "query": "why does splitting text into pieces that overlap help", "relevant_doc_ids": ["chunking"]}
+{"query_id": "q04", "query": "reading the question and the candidate together for accuracy", "relevant_doc_ids": ["reranking"]}
+{"query_id": "q05", "query": "stopping a model from inventing facts it never read", "relevant_doc_ids": ["hallucination"]}
+{"query_id": "q06", "query": "shrinking memory by storing fewer bits per dimension", "relevant_doc_ids": ["quantization"]}
+{"query_id": "q07", "query": "why the slowest request matters more than the typical one", "relevant_doc_ids": ["latency"]}
+{"query_id": "q08", "query": "judging whether search found the right passage", "relevant_doc_ids": ["eval-metrics"]}
+{"query_id": "q09", "query": "efSearch parameter", "relevant_doc_ids": ["ann-hnsw"]}
+{"query_id": "q10", "query": "ANN-4417", "relevant_doc_ids": ["ann-hnsw"]}
+{"query_id": "q11", "query": "nprobe partitions", "relevant_doc_ids": ["ann-ivf"]}
+{"query_id": "q12", "query": "k1 and b parameters", "relevant_doc_ids": ["bm25"]}
+{"query_id": "q13", "query": "reciprocal rank fusion", "relevant_doc_ids": ["hybrid"]}
+{"query_id": "q14", "query": "Hamming distance rescoring", "relevant_doc_ids": ["quantization"]}
+{"query_id": "q15", "query": "product quantization for billion scale corpora", "relevant_doc_ids": ["ann-ivf"]}
+{"query_id": "q16", "query": "combining lexical and embedding search results", "relevant_doc_ids": ["hybrid", "bm25", "dense-retrieval"], "gains": {"hybrid": 3.0, "bm25": 1.0, "dense-retrieval": 1.0}}
+{"query_id": "q17", "query": "normalized discounted cumulative gain graded relevance", "relevant_doc_ids": ["eval-metrics"]}
+{"query_id": "q18", "query": "asymmetric query and passage prefixes", "relevant_doc_ids": ["embeddings"]}
+{"query_id": "q19", "query": "term frequency saturation and length normalization", "relevant_doc_ids": ["bm25"]}
+{"query_id": "q20", "query": "cosine similarity as a dot product of unit vectors", "relevant_doc_ids": ["embeddings"]}
+{"query_id": "q21", "query": "two stage cascade with a cheap first retriever", "relevant_doc_ids": ["reranking"]}
+{"query_id": "q22", "query": "trade recall against latency without rebuilding", "relevant_doc_ids": ["ann-hnsw"]}
+{"query_id": "q23", "query": "when does hybrid search add nothing", "relevant_doc_ids": ["hybrid"]}
+{"query_id": "q24", "query": "deleting vectors from an index", "relevant_doc_ids": ["ann-ivf"]}
